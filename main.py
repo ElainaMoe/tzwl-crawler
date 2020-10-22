@@ -33,7 +33,7 @@ for i in range(1,99999999999):
         print('获取到内容，正在存储……')
         success=1
         append_csv(filename)
-    end_timestamp=datetime.time.now()
+    end_timestamp=datetime.datetime.now()
     if int(end_timestamp)-int(start_timestamp)>=19800:
         break
 if success == 0:
