@@ -3,7 +3,6 @@ import datetime
 import csv
 import os
 import time
-from decimal import Decimal
 
 success=0
 start_timestamp=datetime.datetime.now()
