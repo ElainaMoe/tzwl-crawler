@@ -22,7 +22,6 @@ date=str(time.year)+str(time.month)+str(time.day)
 filename="./data/"+date+'.csv'
 create_csv(filename)
 for i in range(1,99999999999):
-    global success
     url=baseurl+date+str(i).zfill(11)
     print(url)
     result=requests.get(url)
