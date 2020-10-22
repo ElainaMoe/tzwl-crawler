@@ -34,7 +34,7 @@ for i in range(1,99999999999):
         success=1
         append_csv(filename)
     end_timestamp=time.time()
-    if int(end_timestamp)-int(start_timestamp)>19800:
+    if int(str(end_timestamp))-int(str(start_timestamp))>19800:
         break
 if success == 0:
     os.remove(filename)
