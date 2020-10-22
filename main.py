@@ -1,6 +1,9 @@
 import requests
 import datetime
 import csv
+import os
+
+success=0
 
 def create_csv(path):
     with open(path,"w+",newline="",encoding="utf8") as file:    # 打开文件，也相当于一个回车，避免覆盖文档
@@ -26,5 +29,10 @@ for i in range(1,99999999999):
     if str(info)=='[]':
         print('获取到空内容，舍弃……')
     else:
+        global success
         print('获取到内容，正在存储……')
+        success=1
         append_csv(filename)
+
+if success == 0:
+    os.remove(filename)
