@@ -2,9 +2,10 @@ import requests
 import datetime
 import csv
 import os
+import time
 
 success=0
-
+start_timestamp=time.time()
 def create_csv(path):
     with open(path,"w+",newline="",encoding="utf8") as file:    # 打开文件，也相当于一个回车，避免覆盖文档
         csv_file = csv.writer(file)
@@ -32,6 +33,8 @@ for i in range(1,99999999999):
         print('获取到内容，正在存储……')
         success=1
         append_csv(filename)
-
+    end_timestamp=time.time()
+    if int(end_timestamp-start_timestamp)>19800:
+        break
 if success == 0:
     os.remove(filename)
