@@ -22,6 +22,7 @@ date=str(time.year)+str(time.month)+str(time.day)
 filename="./data/"+date+'.csv'
 create_csv(filename)
 for i in range(1,99999999999):
+    global success
     url=baseurl+date+str(i).zfill(11)
     print(url)
     result=requests.get(url)
@@ -29,7 +30,6 @@ for i in range(1,99999999999):
     if str(info)=='[]':
         print('获取到空内容，舍弃……')
     else:
-        global success
         print('获取到内容，正在存储……')
         success=1
         append_csv(filename)
