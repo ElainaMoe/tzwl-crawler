@@ -35,7 +35,7 @@ jobs:
         git config --global user.email GamerPesy@outlook.com
         git config --global user.name Haikito
         git add .
-        git commit -m "update Hitokoto database" -a
+        git commit -m "Uploaded Result" -a
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
